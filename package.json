@@ -1,0 +1,20 @@
+{
+  "name": "poke-blog",
+  "version": "1.0.0",
+  "description": "We are going to add to the API from our previous lab to make requests using the 3 different types of data we can pass via a request: req.params, req.query, and req.body.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
