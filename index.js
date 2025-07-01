@@ -59,7 +59,19 @@ app.get("/pokemon/:id", async (req, res) => {
 //get all matching pokemon
 app.get("/search", async (req, res) => {
   try {
-  } catch (error) {}
+    const ability = req.query.abilities;
+    const matchingPokemon = pokedex.filter(
+      (pokemon) =>
+        Array.isArray(pokemon.abilities) && pokemon.abilities.includes(ability)
+    );
+    if (matchingPokemon.length > 0) {
+      res.json({ "Here are the pokemon you're looking for!": matchingPokemon });
+    } else {
+      error.json({ error: "No pokemon meet that criteria." });
+    }
+  } catch (error) {
+    res.status(404).json({ error: "No such pokemon exists." });
+  }
 });
 
 //add a new pokemon to the dex
